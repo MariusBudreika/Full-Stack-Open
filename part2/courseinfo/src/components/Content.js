@@ -3,7 +3,6 @@ import Part from "./Part";
 
 const Content = ({ parts }) => {
   const total = parts.reduce((s, p) => {
-    console.log("what is happening", s, p);
     return s + p.exercises;
   }, 0);
 
@@ -14,7 +13,7 @@ const Content = ({ parts }) => {
           <Part key={part.id} part={part} />
         ))}
       </ul>
-      <p>total of {total} exercises</p>
+      <p style={{ fontWeight: "bold" }}>total of {total} exercises</p>
     </>
   );
 };
