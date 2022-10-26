@@ -1,6 +1,6 @@
 # Full-Stack-Open
 https://fullstackopen.com/en/
 
-You can check my completed tasks in task(n) folders.
+You can check my tasks solution in task(n) folders.
 
 ## In progress...
