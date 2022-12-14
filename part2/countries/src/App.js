@@ -16,6 +16,10 @@ const App = () => {
     setSearchText(event.target.value);
   };
 
+  const showHandler = (country) => {
+    setSearchText(country);
+  };
+
   const filteredList = countries.filter(({ name }) =>
     name.common.toLowerCase().includes(searchText.toLowerCase())
   );
@@ -31,12 +35,24 @@ const App = () => {
       {filteredList.length > 10 && (
         <p>Too many matches, specify another filter</p>
       )}
-      <ul>
+      <ul style={{ padding: "0" }}>
         {filteredList.length <= 10 &&
           filteredList.length > 1 &&
           filteredList.map((country) => (
             <li key={country.name.common} style={{ listStyleType: "none" }}>
               {country.name.common}
+              <button
+                style={{
+                  marginLeft: "1rem",
+                  backgroundColor: "#FFF",
+                  border: "solid 1px",
+                  borderRadius: "5px",
+                  cursor: "pointer",
+                }}
+                onClick={() => showHandler(country.name.common)}
+              >
+                show
+              </button>
             </li>
           ))}
       </ul>
