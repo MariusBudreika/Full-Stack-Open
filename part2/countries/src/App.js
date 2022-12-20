@@ -56,7 +56,9 @@ const App = () => {
             </li>
           ))}
       </ul>
-      {filteredList.length === 1 && <SingleCountry data={filteredList} />}
+      {filteredList.length === 1 && (
+        <SingleCountry countryInfo={filteredList} />
+      )}
     </div>
   );
 };
